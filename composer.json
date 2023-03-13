@@ -1,0 +1,20 @@
+{
+    "name": "chmodw/chatphp",
+    "description": "",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Chamodya Wimansha",
+            "email": "chamodyawimansha@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    }
+}
