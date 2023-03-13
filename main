@@ -1,21 +1,41 @@
 #!/usr/bin/php
 <?php
 
+use Chmodw\ChatPHP\Cli;
+
 if (php_sapi_name() !== 'cli') {
     exit;
 }
 
 require __DIR__ . '/vendor/autoload.php';
 
+
 print_ln("  _____ _    _       _______ _____  _    _ _____  " . "\n" . " / ____| |  | |   /\|__   __|  __ \| |  | |  __ \ "
     . "\n" . "| |    | |__| |  /  \  | |  | |__) | |__| | |__) |" . "\n" . "| |    |  __  | / /\ \ | |  |  ___/|  __  |  ___/ " . "\n"
     . "| |____| |  | |/ ____ \| |  | |    | |  | | |     " . "\n" . " \_____|_|  |_/_/    \_\_|  |_|    |_|  |_|_|     ", 1);
 
-print_ln("\e[35mCHATPHP" . " \e[39mVersion \e[33m1.0 \e[32m" . date('Y-m-d H:i'), 1);
+print_ln("\e[35mChatPHP" . " \e[39mVersion \e[33m1.0 \e[32m" . date('Y-m-d H:i'), 1);
 
 
-//1. chat
-//2. history
-//3. db-clear
-//4. migrate
 
+$cli = new Cli();
+
+// Print options
+$cli->printOptions();
+
+//echo "input something ... (5 sec)\n";
+//
+//// get file descriptor for stdin
+//$fd = fopen('php://stdin', 'r');
+//
+//// prepare arguments for stream_select()
+//$read = array($fd);
+//$write = $except = array(); // we don't care about this
+//$timeout = 5;
+//
+//// wait for maximal 5 seconds for input
+//if(stream_select($read, $write, $except, $timeout)) {
+//    echo "you typed: " . fgets($fd) . PHP_EOL;
+//} else {
+//    echo "you typed nothing\n";
+//}
