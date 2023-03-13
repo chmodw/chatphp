@@ -8,7 +8,8 @@ class Cli {
         'Chat',
         'View History',
         'Clear Database',
-        'Migrate Database'
+        'Migrate Database',
+        'Exit'
     ];
 
     public function __construct()
