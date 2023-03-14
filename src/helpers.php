@@ -1,6 +1,7 @@
 <?php
 
 use Chmodw\ChatPHP\Exceptions\FileNotFound;
+use JetBrains\PhpStorm\NoReturn;
 
 if (!function_exists('print_ln')) {
     /**
@@ -48,5 +49,18 @@ if (!function_exists('env')) {
         }
 
         return $default;
+    }
+}
+
+if (!function_exists('dd')) {
+
+    /**
+     * @param  mixed  $value
+     * @return void
+     */
+    #[NoReturn] function dd(mixed $value): void
+    {
+        print_ln($value);
+        die();
     }
 }

@@ -1,7 +1,9 @@
 #!/usr/bin/php
 <?php
 
-use Chmodw\ChatPHP\Cli;
+use Chmodw\ChatPHP\Application;
+
+define('APPLICATION_START', microtime(true));
 
 if (php_sapi_name() !== 'cli') {
     exit;
@@ -17,25 +19,33 @@ print_ln("  _____ _    _       _______ _____  _    _ _____  " . "\n" . " / ____|
 print_ln("\e[35mChatPHP" . " \e[39mVersion \e[33m1.0 \e[32m" . date('Y-m-d H:i'), 1);
 
 
+$app = new Application();
 
-$cli = new Cli();
+$app->start();
 
-// Print options
-$cli->printOptions();
 
-//echo "input something ... (5 sec)\n";
+
+//$cli = new Cli();
 //
-//// get file descriptor for stdin
+//// Print options
+//$cli->printOptions();
+//
+//print_ln('Select option ....', 1);
+////echo "input something ... (5 sec)\n";
+////
+////// get file descriptor for stdin
 //$fd = fopen('php://stdin', 'r');
 //
 //// prepare arguments for stream_select()
 //$read = array($fd);
 //$write = $except = array(); // we don't care about this
-//$timeout = 5;
+//$timeout = 60;
 //
 //// wait for maximal 5 seconds for input
 //if(stream_select($read, $write, $except, $timeout)) {
 //    echo "you typed: " . fgets($fd) . PHP_EOL;
 //} else {
-//    echo "you typed nothing\n";
+//    echo "Exiting...";
 //}
+//
+//exit();

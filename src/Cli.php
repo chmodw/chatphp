@@ -30,4 +30,15 @@ class Cli {
 
         print_ln("________________________________");
     }
+
+    /**
+     * Checks if a given option is in the options array
+     *
+     * @param  string  $option
+     * @return bool
+     */
+    public function validateOption(string $option): bool
+    {
+        return in_array($option, $this->options);
+    }
 }
