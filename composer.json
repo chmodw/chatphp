@@ -26,6 +26,7 @@
         "phpunit/phpunit": "^10.0"
     },
     "require": {
-        "guzzlehttp/guzzle": "^7.5"
+        "guzzlehttp/guzzle": "^7.5",
+        "symfony/console": "^6.2"
     }
 }

@@ -11,9 +11,13 @@ if (!function_exists('print_ln')) {
      * @param  int  $leading_spaces
      * @return void
      */
-    function print_ln(string $string = "", int $leading_spaces = 0): void
+    function print_ln(mixed $string = "", int $leading_spaces = 0): void
     {
-        echo $string . PHP_EOL;
+        if (!is_string($string)) {
+            print_r($string);
+        } else {
+            echo $string . PHP_EOL;
+        }
 
         for ($i = 0;$i<$leading_spaces; $i++) {
             echo PHP_EOL;

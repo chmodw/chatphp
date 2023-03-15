@@ -1,12 +1,12 @@
 <?php
 
-namespace Chmodw\ChatPHP;
+namespace Chmodw\ChatPHP\Chat;
 
 class Application {
 
     public function start(): void
     {
-        new Conversation();
+        new Completion();
     }
 
 }
